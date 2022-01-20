@@ -53,10 +53,9 @@ def update_customer(filename = customers_data):
 
         for i in range(len(file_data["customers"])):
             if file_data["customers"][i]["id"] == id:
-                file_data["customers"].append({
-                "id":id,
-                "name": name,
-                "address": address}) 
+                file_data["customers"][i]["name"] = name
+                file_data["customers"][i]["address"] = address
+               
         
         # # Sets file's current position at offset.
         file.seek(0)
@@ -64,7 +63,7 @@ def update_customer(filename = customers_data):
         with open(filename,'w') as file:
             json.dump(file_data, file, indent = 4)
 
-load_customers()
+
 
     
 

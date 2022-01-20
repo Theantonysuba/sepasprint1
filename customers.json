@@ -17,18 +17,8 @@
         },
         {
             "id": "4",
-            "name": "daisy",
-            "address": "trm"
-        },
-        {
-            "id": "5",
             "name": "nicky",
             "address": "ruaka"
-        },
-        {
-            "id": "5",
-            "name": "daisy",
-            "address": "dee"
         }
     ]
 }
