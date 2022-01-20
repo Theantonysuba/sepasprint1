@@ -1,3 +1,7 @@
+
+import customers
+
+
 def main():
     
     while True:
@@ -18,6 +22,8 @@ def main():
         
         if int(user_input) == 1:
             print("These are the customers data")
+        elif int(user_input) == 2:
+            customers.create_customer()
         elif int(user_input) == 14:
             break
         else:

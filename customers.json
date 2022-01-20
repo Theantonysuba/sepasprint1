@@ -1,0 +1,34 @@
+{
+    "customers": [
+        {
+            "id": "1",
+            "name": "antony",
+            "address": "ksm"
+        },
+        {
+            "id": "2",
+            "name": "susie",
+            "address": "hmb"
+        },
+        {
+            "id": "3",
+            "name": "tari",
+            "address": "mbs"
+        },
+        {
+            "id": "4",
+            "name": "daisy",
+            "address": "trm"
+        },
+        {
+            "id": "5",
+            "name": "nicky",
+            "address": "ruaka"
+        },
+        {
+            "id": "5",
+            "name": "daisy",
+            "address": "dee"
+        }
+    ]
+}
