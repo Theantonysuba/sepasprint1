@@ -2,12 +2,24 @@ import json
 
 products_data = "products.json"
 
-def load_products(filename = products_data):
+def load_product(filename = products_data):
 
-    with open(filename,'r+') as file:
-        file_data = json.load(file)
-        for i in file_data['products']:
-            print(i)
+    while True:
+        user_input = input('Enter id of product to view or "exit" to go back to main menu \n')
+
+        if user_input.lower() == "exit":
+            break
+        else:
+            with open(filename,'r+') as file:
+                file_data = json.load(file)
+                for i in range(len(file_data["products"])):
+                    if file_data["products"][i]["id"] == user_input:
+                        print( file_data["products"][i])
+                        break
+                else:
+                     print("No product with the given id found")
+                        
+                    
 
 def create_product(filename = products_data):
     id = input('Enter product id ')
@@ -66,3 +78,11 @@ def update_product(filename = products_data):
         with open(filename,'w') as file:
             json.dump(file_data, file, indent = 4)
 
+def list_products(filename = products_data):
+
+    with open(filename,'r+') as file:
+        file_data = json.load(file)
+        for i in file_data['products']:
+            print(i)
+
+load_product()

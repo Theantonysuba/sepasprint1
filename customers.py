@@ -1,15 +1,28 @@
 
 import json
 
+
 customers_data = "customers.json"
 
-def load_customers(filename = customers_data):
+def load_customer(filename = customers_data):
 
-    with open(filename,'r+') as file:
-        file_data = json.load(file)
-        for i in file_data['customers']:
-            print(i)
+    while True:
+        user_input = input('Enter id of customer to view or "exit" to go back to main menu \n')
 
+        if user_input.lower() == "exit":
+            break
+        else:
+            with open(filename,'r+') as file:
+                file_data = json.load(file)
+                for i in range(len(file_data["customers"])):
+                    if file_data["customers"][i]["id"] == user_input:
+                        print( file_data["customers"][i])
+                        break
+                else:
+                     print("No customer with the given id found")
+        
+                        
+                                                
 def create_customer(filename = customers_data):
     id = input('Enter your id ')
     name = input('Enter your name ')
@@ -62,6 +75,17 @@ def update_customer(filename = customers_data):
         # # convert back to json.
         with open(filename,'w') as file:
             json.dump(file_data, file, indent = 4)
+
+def list_customers(filename = customers_data):
+
+    with open(filename,'r+') as file:
+        file_data = json.load(file)
+        for i in file_data['customers']:
+            print(i)
+
+
+
+
 
 
 
