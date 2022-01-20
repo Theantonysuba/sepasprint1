@@ -85,4 +85,3 @@ def list_products(filename = products_data):
         for i in file_data['products']:
             print(i)
 
-load_product()

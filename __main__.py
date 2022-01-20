@@ -1,5 +1,6 @@
 
 import customers
+import products
 
 
 def main():
@@ -21,13 +22,30 @@ def main():
                                                                         "Enter 14 to quit\n")
         
         if int(user_input) == 1:
-            print("These are the customers data")
+            customers.load_customer()
         elif int(user_input) == 2:
             customers.create_customer()
+        elif int(user_input) == 3:
+            customers.delete_customer()
+        elif int(user_input) == 4:
+            customers.update_customer()
+        elif int(user_input) == 5:
+            products.load_product()
+        elif int(user_input) == 6:
+            products.create_product()
+        elif int(user_input) == 7:
+            products.delete_product()
+        elif int(user_input) == 8:
+            products.update_product()
+        elif int(user_input) == 11:
+            customers.list_customers()
+        elif int(user_input) == 12:
+            products.list_products()
+
         elif int(user_input) == 14:
             break
         else:
-            print("Enter a valid choice")
+            print("Please enter a valid number")
 
 if __name__ == "__main__":
     main()
