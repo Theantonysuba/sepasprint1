@@ -1,8 +1,31 @@
 
 import json
 
-
 customers_data = "customers.json"
+
+def customers_menu():
+    while True:
+        user_input = input("Enter 1 to load customer data\n"
+                           "Enter 2 to insert a new customer\n"
+                           "Enter 3 to delete a customer\n"
+                           "Enter 4 to update a customer\n"
+                           "Enter 5 to list all customers\n"
+                           "Enter 6 to list a customer's details\n"
+                           "Enter 'exit' to quit\n")
+
+        if int(user_input) == 1:
+            load_customer()
+        elif int(user_input) == 2:
+            create_customer()
+        elif int(user_input) == 3:
+            delete_customer()
+        elif int(user_input) == 4:
+            update_customer()
+        elif int(user_input) == 5:
+            list_customers()
+        elif user_input.lower() == "exit":
+            break
+
 
 def load_customer(filename = customers_data):
 

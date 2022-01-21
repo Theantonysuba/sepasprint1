@@ -2,6 +2,29 @@ import json
 
 products_data = "products.json"
 
+def products_menu():
+    while True:
+        user_input = input("Enter 1 to load product data\n"
+                           "Enter 2 to insert a new product\n"
+                           "Enter 3 to delete a product\n"
+                           "Enter 4 to update a product\n"
+                           "Enter 5 to list all products\n"
+                           "Enter 6 to list a product's details\n"
+                           "Enter 'exit' to quit\n")
+
+        if int(user_input) == 1:
+            load_product()
+        elif int(user_input) == 2:
+            create_product()
+        elif int(user_input) == 3:
+            delete_product()
+        elif int(user_input) == 4:
+            update_product()
+        elif int(user_input) == 5:
+            list_products()
+        elif user_input.lower() == "exit":
+            break
+
 def load_product(filename = products_data):
 
     while True:
