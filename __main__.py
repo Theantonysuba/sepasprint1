@@ -9,7 +9,7 @@ def main():
         user_input = input( "Enter 1 for customers\n"
                             "Enter 2 for products\n"
                             "Enter 3 for purchases\n"
-                            "Enter 'exit' to quit\n")
+                            "Enter 0 to quit\n")
         
         if int(user_input) == 1:
             customers.customers_menu()

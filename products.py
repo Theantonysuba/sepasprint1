@@ -2,6 +2,37 @@ import json
 
 products_data = "products.json"
 
+class Product:
+    def __init__(self,id,name,price,amount):
+        self.id = id
+        self.name = name
+        self.price = price
+        self.amount = amount
+
+    def get_id(self):
+        return self.id
+
+    def set_id(self,id):
+        self.id = id
+
+    def get_name(self):
+        return self.name
+
+    def set_name(self,name):
+        self.name = name
+
+    def get_price(self):
+        return self.price
+
+    def set_price(self,price):
+        self.price = price
+
+    def get_amount(self):
+        return self.amount
+
+    def set_amount(self,amount):
+        self.amount = amount
+
 def products_menu():
     while True:
         user_input = input("Enter 1 to load product data\n"
@@ -10,7 +41,7 @@ def products_menu():
                            "Enter 4 to update a product\n"
                            "Enter 5 to list all products\n"
                            "Enter 6 to list a product's details\n"
-                           "Enter 'exit' to quit\n")
+                           "Enter 0 to quit\n")
 
         if int(user_input) == 1:
             load_product()
@@ -22,7 +53,7 @@ def products_menu():
             update_product()
         elif int(user_input) == 5:
             list_products()
-        elif user_input.lower() == "exit":
+        elif int(user_input) == 0:
             break
 
 def load_product(filename = products_data):
@@ -45,22 +76,29 @@ def load_product(filename = products_data):
                     
 
 def create_product(filename = products_data):
-    id = input('Enter product id ')
-    name = input('Enter product name ')
-    amount = input('Enter product amount ')
-    price = input('Enter product price ')
 
     with open(filename,'r+') as file:
+
+        id = input('Enter product id ')
         file_data = json.load(file)
-        file_data["products"].append({
-        "id": id,
-        "name": name,
-        "amount": amount,
-        "price": price}) 
-        # Sets file's current position at offset.
-        file.seek(0)
-        # convert back to json.
-        json.dump(file_data, file, indent = 4)
+
+        for i in range(len(file_data["products"])):
+            if file_data["products"][i]["id"] == id:
+                print("Product Id already exists")
+                break
+        else:
+            name = input('Enter product name ')
+            amount = input('Enter product amount ')
+            price = input('Enter product price ')
+
+            product = Product(id,name,amount,price)
+                        
+            file_data["products"].append(product.__dict__) 
+            # Sets file's current position at offset.
+            file.seek(0)
+            # convert back to json.
+            json.dump(file_data, file, indent = 4)
+    
 
 def delete_product(filename = products_data):
     id = input('Enter id of customer to delete')
@@ -107,4 +145,3 @@ def list_products(filename = products_data):
         file_data = json.load(file)
         for i in file_data['products']:
             print(i)
-

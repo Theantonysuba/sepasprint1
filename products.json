@@ -29,6 +29,12 @@
             "name": "pineapple",
             "amount": "1",
             "price": "1"
+        },
+        {
+            "id": "14",
+            "name": "pawpaw",
+            "price": "23",
+            "amount": "8"
         }
     ]
 }

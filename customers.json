@@ -19,6 +19,16 @@
             "id": "4",
             "name": "nicky",
             "address": "ruaka"
+        },
+        {
+            "id": "15",
+            "name": "amy",
+            "address": "ruiru"
+        },
+        {
+            "id": "6",
+            "name": "mwangi",
+            "address": "myeri"
         }
     ]
 }

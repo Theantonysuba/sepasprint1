@@ -3,6 +3,31 @@ import json
 
 customers_data = "customers.json"
 
+class Customer:
+    def __init__(self,id,name,address):
+        self.id = id
+        self.name = name
+        self.address = address
+
+    def get_id(self):
+        return self.id
+
+    def set_id(self,id):
+        self.id = id
+
+    def get_name(self):
+        return self.name
+
+    def set_name(self,name):
+        self.name = name
+
+    def get_address(self):
+        return self.address
+
+    def set_address(self,address):
+        self.address = address
+
+
 def customers_menu():
     while True:
         user_input = input("Enter 1 to load customer data\n"
@@ -11,7 +36,7 @@ def customers_menu():
                            "Enter 4 to update a customer\n"
                            "Enter 5 to list all customers\n"
                            "Enter 6 to list a customer's details\n"
-                           "Enter 'exit' to quit\n")
+                           "Enter 0 to quit\n")
 
         if int(user_input) == 1:
             load_customer()
@@ -23,7 +48,7 @@ def customers_menu():
             update_customer()
         elif int(user_input) == 5:
             list_customers()
-        elif user_input.lower() == "exit":
+        elif int(user_input) == 0:
             break
 
 
@@ -47,20 +72,29 @@ def load_customer(filename = customers_data):
                         
                                                 
 def create_customer(filename = customers_data):
-    id = input('Enter your id ')
-    name = input('Enter your name ')
-    address = input('Enter your address ')
+    
 
     with open(filename,'r+') as file:
+
+        id = input('Enter your id ')
         file_data = json.load(file)
-        file_data["customers"].append({
-        "id": id,
-        "name": name,
-        "address": address}) 
-        # Sets file's current position at offset.
-        file.seek(0)
-        # convert back to json.
-        json.dump(file_data, file, indent = 4)
+
+        for i in range(len(file_data["customers"])):
+            if file_data["customers"][i]["id"] == id:
+                print("User Id already exists")
+                break
+        else:
+            name = input('Enter your name ')
+
+            address = input('Enter your address ')
+
+            customer = Customer(id,name,address)
+                        
+            file_data["customers"].append(customer.__dict__) 
+            # Sets file's current position at offset.
+            file.seek(0)
+            # convert back to json.
+            json.dump(file_data, file, indent = 4)
 
 def delete_customer(filename = customers_data):
     id = input('Enter id of customer to delete')
@@ -106,6 +140,10 @@ def list_customers(filename = customers_data):
         for i in file_data['customers']:
             print(i)
 
+
+
+
+   
 
 
 
