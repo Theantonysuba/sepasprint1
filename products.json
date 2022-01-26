@@ -2,39 +2,39 @@
     "products": [
         {
             "id": "1",
-            "name": "apples",
-            "amount": 15,
-            "price": 6.0
+            "name": "mangoes",
+            "price": 10.0,
+            "amount": 10
         },
         {
             "id": "2",
-            "name": "bananas",
-            "amount": 6,
-            "price": 3.0
+            "name": "apples",
+            "price": 15.0,
+            "amount": 4
         },
         {
             "id": "3",
-            "name": "mangoes",
-            "amount": 9,
-            "price": 4.0
+            "name": "watermelons",
+            "price": 6.0,
+            "amount": 8
         },
         {
             "id": "4",
-            "name": "watermelons",
-            "amount": 4,
-            "price": 10.0
+            "name": "avocado",
+            "price": 8.0,
+            "amount": 7
+        },
+        {
+            "id": "5",
+            "name": "pawpaws",
+            "price": 6.0,
+            "amount": 3
         },
         {
             "id": "6",
-            "name": "pineapple",
-            "amount": "1",
-            "price": "1"
-        },
-        {
-            "id": "14",
-            "name": "pawpaw",
-            "price": "23",
-            "amount": "8"
+            "name": "oranges",
+            "price": 14.0,
+            "amount": 3
         }
     ]
 }

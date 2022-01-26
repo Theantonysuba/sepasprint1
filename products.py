@@ -6,8 +6,8 @@ class Product:
     def __init__(self,id,name,price,amount):
         self.id = id
         self.name = name
-        self.price = price
-        self.amount = amount
+        self.price = float(price)
+        self.amount = int(amount)
 
     def get_id(self):
         return self.id
@@ -39,8 +39,9 @@ def products_menu():
                            "Enter 2 to insert a new product\n"
                            "Enter 3 to delete a product\n"
                            "Enter 4 to update a product\n"
-                           "Enter 5 to list all products\n"
-                           "Enter 6 to list a product's details\n"
+                           "Enter 5 to search for a product\n"
+                           "Enter 6 to list all products\n"
+                           "Enter 7 to list a product's details\n"
                            "Enter 0 to quit\n")
 
         if int(user_input) == 1:
@@ -52,6 +53,8 @@ def products_menu():
         elif int(user_input) == 4:
             update_product()
         elif int(user_input) == 5:
+            search_product()
+        elif int(user_input) == 6:
             list_products()
         elif int(user_input) == 0:
             break
@@ -145,3 +148,11 @@ def list_products(filename = products_data):
         file_data = json.load(file)
         for i in file_data['products']:
             print(i)
+
+def search_product(filename = products_data):
+    with open(filename,'r+') as file:
+        file_data = json.load(file)
+        search = input("Enter search item \n")
+        for i in range(len(file_data["products"])):
+            if file_data["products"][i]["name"][:len(search)].lower() == search.lower():
+                print(file_data["products"][i])
