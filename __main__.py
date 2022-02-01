@@ -1,6 +1,7 @@
 
 import customers
 import products
+import purchases
 
 
 def main():
@@ -16,7 +17,7 @@ def main():
         elif int(user_input) == 2:
             products.products_menu()
         elif int(user_input) == 3:
-            pass
+            purchases.purchases_menu()
         elif user_input.lower() == "exit":
             break
         

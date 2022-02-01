@@ -1,0 +1,12 @@
+{
+    "purchases": [
+        {
+            "customer_id": "1",
+            "customer_name": "antony",
+            "product_name": "watermelons",
+            "product_price": 6.0,
+            "product_quantity": 87,
+            "total_price": 120.0
+        }
+    ]
+}

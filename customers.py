@@ -9,74 +9,36 @@ class Customer:
         self.name = name
         self.address = address
 
-    def get_id(self):
-        return self.id
-
-    def set_id(self,id):
-        self.id = id
-
-    def get_name(self):
-        return self.name
-
-    def set_name(self,name):
-        self.name = name
-
-    def get_address(self):
-        return self.address
-
-    def set_address(self,address):
-        self.address = address
-
-
 def customers_menu():
     while True:
-        user_input = input("Enter 1 to load customer data\n"
-                           "Enter 2 to insert a new customer\n"
-                           "Enter 3 to delete a customer\n"
-                           "Enter 4 to update a customer\n"
-                           "Enter 5 to list all customers\n"
-                           "Enter 6 to list a customer's details\n"
+        user_input = input(
+                           "Enter 1 to insert a new customer\n"
+                           "Enter 2 to delete a customer\n"
+                           "Enter 3 to update a customer\n"
+                           "Enter 4 to list all customers\n"
+                           "Enter 5 to search for customer\n"
                            "Enter 0 to quit\n")
 
         if int(user_input) == 1:
-            load_customer()
-        elif int(user_input) == 2:
             create_customer()
-        elif int(user_input) == 3:
+        elif int(user_input) == 2:
             delete_customer()
-        elif int(user_input) == 4:
+        elif int(user_input) == 3:
             update_customer()
-        elif int(user_input) == 5:
+        elif int(user_input) == 4:
             list_customers()
+        elif int(user_input) == 5:
+            search_customer()
         elif int(user_input) == 0:
             break
-
-
-def load_customer(filename = customers_data):
-
-    while True:
-        user_input = input('Enter id of customer to view or "exit" to go back to main menu \n')
-
-        if user_input.lower() == "exit":
-            break
-        else:
-            with open(filename,'r+') as file:
-                file_data = json.load(file)
-                for i in range(len(file_data["customers"])):
-                    if file_data["customers"][i]["id"] == user_input:
-                        print( file_data["customers"][i])
-                        break
-                else:
-                     print("No customer with the given id found")
-        
-                        
+                      
                                                 
 def create_customer(filename = customers_data):
     
 
     with open(filename,'r+') as file:
 
-        id = input('Enter your id ')
+        id = input('Enter user id ')
         file_data = json.load(file)
 
         for i in range(len(file_data["customers"])):
@@ -140,6 +102,13 @@ def list_customers(filename = customers_data):
         for i in file_data['customers']:
             print(i)
 
+def search_customer(filename = customers_data):
+    with open(filename,'r+') as file:
+        file_data = json.load(file)
+        search = input("Enter search item \n")
+        for i in range(len(file_data["customers"])):
+            if file_data["customers"][i]["name"][:len(search)].lower() == search.lower():
+                print(file_data["customers"][i])
 
 
 
