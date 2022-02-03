@@ -52,7 +52,8 @@ def customer_check(filename = customers_data):
             if new_id == "1":
                 return customer_check(filename = customers_data)
             elif new_id == "2":
-                customers.create_customer()
+                customers.create_customer(filename = customers_data)
+                return customer_check(filename = customers_data)
                 
 
 def product_check(filename = products_data):
@@ -76,7 +77,9 @@ def product_check(filename = products_data):
             if new_id == "1":
                 return product_check(filename = products_data)
             elif new_id == "2":
-                products.create_product()
+                products.create_product(filename = products_data)
+                return product_check(filename = products_data)
+
 
 def purchase_validator(quantity):
     purchase_quantity = int(input("Enter the quantity to purchase"))
@@ -146,6 +149,8 @@ def list_purchases(filename = purchases_data):
         file_data = json.load(file)
         for i in file_data['purchases']:
             print(i)
+
+check_out()
 
 
 

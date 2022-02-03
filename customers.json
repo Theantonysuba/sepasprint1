@@ -39,6 +39,16 @@
             "id": "14",
             "name": "pepe",
             "address": "london"
+        },
+        {
+            "id": "3333",
+            "name": "wambois",
+            "address": "mombasa"
+        },
+        {
+            "id": "45666",
+            "name": "belinda",
+            "address": "kiambu"
         }
     ]
 }

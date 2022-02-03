@@ -63,6 +63,38 @@
             "product_price": 10.0,
             "product_quantity": 10,
             "total_price": 100.0
+        },
+        {
+            "customer_id": "1",
+            "customer_name": "antony",
+            "product_name": "apples",
+            "product_price": 15.0,
+            "product_quantity": 3,
+            "total_price": 45.0
+        },
+        {
+            "customer_id": "3",
+            "customer_name": "tari",
+            "product_name": "bread",
+            "product_price": 10.0,
+            "product_quantity": 34,
+            "total_price": 340.0
+        },
+        {
+            "customer_id": "6",
+            "customer_name": "mwangi",
+            "product_name": "bread",
+            "product_price": 10.0,
+            "product_quantity": 33,
+            "total_price": 330.0
+        },
+        {
+            "customer_id": "45666",
+            "customer_name": "belinda",
+            "product_name": "mangoes",
+            "product_price": 10.0,
+            "product_quantity": 10,
+            "total_price": 100.0
         }
     ]
 }
