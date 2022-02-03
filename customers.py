@@ -46,9 +46,9 @@ def create_customer(filename = customers_data):
                 print("User Id already exists")
                 break
         else:
-            name = input('Enter your name ')
+            name = input('Enter user name \n')
 
-            address = input('Enter your address ')
+            address = input('Enter user address \n')
 
             customer = Customer(id,name,address)
                         
@@ -58,8 +58,10 @@ def create_customer(filename = customers_data):
             # convert back to json.
             json.dump(file_data, file, indent = 4)
 
+            print("User successfully added")
+
 def delete_customer(filename = customers_data):
-    id = input('Enter id of customer to delete')
+    id = input('Enter id of customer to delete \n' )
 
     with open(filename,'r+') as file:
         file_data = json.load(file)
@@ -75,18 +77,30 @@ def delete_customer(filename = customers_data):
         with open(filename,'w') as file:
             json.dump(file_data, file, indent = 4)
 
+        print("User successfully deleted")
+
 def update_customer(filename = customers_data):
-    id = input('Enter id to update')
-    name = input('Enter new name ')
-    address = input('Enter new address ')
+    
 
     with open(filename,'r+') as file:
         file_data = json.load(file)
 
+        id = input('Enter id to update \n')
+
         for i in range(len(file_data["customers"])):
+            
             if file_data["customers"][i]["id"] == id:
+                name = input('Enter new name \n ')
+                address = input('Enter new address \n')
+
                 file_data["customers"][i]["name"] = name
                 file_data["customers"][i]["address"] = address
+
+                print("User successfully updated")
+                break
+                
+        else:
+            print("User Id does not exist")
                
         
         # # Sets file's current position at offset.

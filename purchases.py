@@ -3,6 +3,7 @@ import customers
 import products
 
 import json
+import pprint
 
 customers_data = "customers.json"
 products_data = "products.json"
@@ -11,8 +12,8 @@ purchases_data = "purchases.json"
 def purchases_menu():
     while True:
         user_input = input(
-                           "Enter 1 to check out a customer\n"
-                           "Enter 2 to see purchase history\n"
+                           "Enter 1 for purchase\n"
+                           "Enter 2 to see past transactions\n"
                            "Enter 0 to quit\n")
 
         if int(user_input) == 1:
@@ -94,54 +95,78 @@ def purchase_validator(quantity):
 
 def check_out():
     customer = customer_check()
-    product = product_check()
-  
-    customer_id = customer["id"]
     customer_name = customer["name"]
+
+    total_price = []
+    cart_list = []
+
+    while True:
+        product = product_check()
     
-    product_id = product["id"]
-    product_name = product["name"]
-    product_price = product["price"]
-    product_quantity = int(product["quantity"])
-    
-    purchase_quantity = int(purchase_validator(product_quantity))
-    total_price = purchase_quantity * product_price 
-    print(f"""
-            Order details: 
-            Product name: {product_name}
-            Product price: {product_price}
-            Product quantity: {purchase_quantity}
-            Your total price: {total_price}
+        customer_id = customer["id"]
         
-    """)
+        
+        product_id = product["id"]
+        product_name = product["name"]
+        product_price = product["price"]
+        product_quantity = product["quantity"]
+        
+        purchase_quantity = int(purchase_validator(product_quantity))
+        item_price = purchase_quantity * product_price 
+        
+        print(f"""
+                Order details: 
+                Product name: {product_name}
+                Product price: {product_price}
+                Product quantity: {purchase_quantity}
+                Your item price: {item_price}
+            
+        """)
 
-    #####update customer records
+        total_price.append(item_price)
+        cart = {'Product name': product_name, 'Product price': product_price, 'Product quantity': purchase_quantity, 'Item Price': item_price }
+        cart_list.append(cart)
 
-    with open(products_data,'r+') as file:
-        file_data = json.load(file)
-        for i in range(len(file_data["products"])):
-            if file_data["products"][i]["id"] == product_id:
-                file_data["products"][i]["quantity"] = product_quantity - purchase_quantity
 
-        # # Sets file's current position at offset.
-        file.seek(0)
-        # # convert back to json.
-        with open( products_data,'w') as file:
+        #####update customer records
+
+        with open(products_data,'r+') as file:
+            file_data = json.load(file)
+            for i in range(len(file_data["products"])):
+                if file_data["products"][i]["id"] == product_id:
+                    file_data["products"][i]["quantity"] = product_quantity - purchase_quantity
+
+            # # Sets file's current position at offset.
+            file.seek(0)
+            # # convert back to json.
+            with open( products_data,'w') as file:
+                json.dump(file_data, file, indent = 4)
+            # return(file_data["products"][i])
+
+        ##### update purchase records
+        with open(purchases_data,'r+') as file:
+            file_data = json.load(file)
+
+            product = Purchases(customer_id,customer_name,product_name, product_price,purchase_quantity,item_price)
+                            
+            file_data["purchases"].append(product.__dict__) 
+            # Sets file's current position at offset.
+            file.seek(0)
+            # convert back to json.
             json.dump(file_data, file, indent = 4)
-        # return(file_data["products"][i])
+        
+        
+        new_item = input("Press 1 to enter another item, 2 to check out or 0 to quit\n" )
 
-    ##### update purchase records
-    with open(purchases_data,'r+') as file:
-        file_data = json.load(file)
-
-        product = Purchases(customer_id,customer_name,product_name, product_price,purchase_quantity,total_price)
-                        
-        file_data["purchases"].append(product.__dict__) 
-        # Sets file's current position at offset.
-        file.seek(0)
-        # convert back to json.
-        json.dump(file_data, file, indent = 4)
-           
+        if int(new_item) == 2:
+            final_amount = sum(total_price)
+            print("Receipt: \n")
+            pprint.pprint(cart_list)
+            print(f"The total price of your item is:", {final_amount})
+            break
+        elif int(new_item) == 0:
+            break
+            
     
 def list_purchases(filename = purchases_data):
 
@@ -150,7 +175,6 @@ def list_purchases(filename = purchases_data):
         for i in file_data['purchases']:
             print(i)
 
-check_out()
 
 
 

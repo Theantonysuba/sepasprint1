@@ -4,38 +4,37 @@
             "id": "1",
             "name": "mangoes",
             "price": 10.0,
-            "quantity": 10
+            "quantity": 978
         },
         {
             "id": "2",
             "name": "apples",
             "price": 15.0,
-            "quantity": 2
+            "quantity": 244
         },
         {
             "id": "3",
             "name": "watermelons",
             "price": 6.0,
-            "quantity": 67
+            "quantity": 100
         },
         {
-            "id": "4",
-            "name": "bread",
-            "price": 10.0,
-            "amount": 7,
-            "quantity": 67
+            "id": "34",
+            "name": "quavasss",
+            "price": 7.0,
+            "quantity": 99
         },
         {
             "id": "5",
-            "name": "pawpaws",
+            "name": "pawpaw",
             "price": 6.0,
-            "amount": 378
+            "quantity": 54
         },
         {
-            "id": "6",
+            "id": "4",
             "name": "oranges",
-            "price": 14.0,
-            "amount": 145
+            "price": 8.0,
+            "quantity": 24
         }
     ]
 }
