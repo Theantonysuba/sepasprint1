@@ -7,6 +7,62 @@
             "product_price": 6.0,
             "product_quantity": 87,
             "total_price": 120.0
+        },
+        {
+            "customer_id": "1",
+            "customer_name": "antony",
+            "product_name": "mangoes",
+            "product_price": 10.0,
+            "product_quantity": 50,
+            "total_price": 100.0
+        },
+        {
+            "customer_id": "1",
+            "customer_name": "antony",
+            "product_name": "apples",
+            "product_price": 15.0,
+            "product_quantity": 45,
+            "total_price": 150.0
+        },
+        {
+            "customer_id": "2",
+            "customer_name": "susie",
+            "product_name": "bread",
+            "product_price": 10.0,
+            "product_quantity": 10,
+            "total_price": 100.0
+        },
+        {
+            "customer_id": "1",
+            "customer_name": "antony",
+            "product_name": "mangoes",
+            "product_price": 10.0,
+            "product_quantity": 10,
+            "total_price": 100.0
+        },
+        {
+            "customer_id": "1",
+            "customer_name": "antony",
+            "product_name": "apples",
+            "product_price": 15.0,
+            "product_quantity": 10,
+            "total_price": 150.0
+        },
+        {
+            "customer_id": "3",
+            "customer_name": "tari",
+            "product_name": "apples",
+            "product_price": 15.0,
+            "product_quantity": 10,
+            "total_price": 150.0
+        },
+        {
+            "customer_id": "1",
+            "customer_name": "antony",
+            "product_name": "mangoes",
+            "product_price": 10.0,
+            "product_quantity": 10,
+            "total_price": 100.0
         }
     ]
 }

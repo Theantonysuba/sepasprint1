@@ -4,13 +4,13 @@
             "id": "1",
             "name": "mangoes",
             "price": 10.0,
-            "quantity": 50
+            "quantity": 20
         },
         {
             "id": "2",
             "name": "apples",
             "price": 15.0,
-            "quantity": 45
+            "quantity": 5
         },
         {
             "id": "3",
@@ -23,7 +23,7 @@
             "name": "bread",
             "price": 10.0,
             "amount": 7,
-            "quantity": 144
+            "quantity": 134
         },
         {
             "id": "5",

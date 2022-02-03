@@ -50,7 +50,7 @@ def customer_check(filename = customers_data):
             new_id = input("Enter 1 to enter a new ID\n"
                                 "Enter 2 to create a new customer\n")
             if new_id == "1":
-                customer_check()
+                return customer_check(filename = customers_data)
             elif new_id == "2":
                 customers.create_customer()
                 
@@ -64,13 +64,17 @@ def product_check(filename = products_data):
 
         for i in range(len(file_data["products"])):
             if file_data["products"][i]["id"] == id:
+                print("Product details:")
+                print("Product name:",file_data["products"][i]["name"])
+                print("Price:", file_data["products"][i]["price"])
+                print("Amount in stock:", file_data["products"][i]["quantity"])
                 return file_data["products"][i]
         else:
             print("No product with the given Id exists")
             new_id = input("Enter 1 to enter a new ID\n"
                             "Enter 2 to create a new product\n")
             if new_id == "1":
-                product_check()
+                return product_check(filename = products_data)
             elif new_id == "2":
                 products.create_product()
 
@@ -88,19 +92,15 @@ def purchase_validator(quantity):
 def check_out():
     customer = customer_check()
     product = product_check()
-
-    print("Product details:")
+  
     customer_id = customer["id"]
     customer_name = customer["name"]
     
     product_id = product["id"]
     product_name = product["name"]
     product_price = product["price"]
-    product_quantity = product["quantity"]
-    print("Product name:",product_name)
-    print("Price:",product_price)
-    print("Amount in stock:",product_quantity)
-
+    product_quantity = int(product["quantity"])
+    
     purchase_quantity = int(purchase_validator(product_quantity))
     total_price = purchase_quantity * product_price 
     print(f"""
@@ -131,7 +131,7 @@ def check_out():
     with open(purchases_data,'r+') as file:
         file_data = json.load(file)
 
-        product = Purchases(customer_id,customer_name,product_name, product_price,product_quantity,total_price)
+        product = Purchases(customer_id,customer_name,product_name, product_price,purchase_quantity,total_price)
                         
         file_data["purchases"].append(product.__dict__) 
         # Sets file's current position at offset.
@@ -139,17 +139,14 @@ def check_out():
         # convert back to json.
         json.dump(file_data, file, indent = 4)
            
-        
-                
-
-
-
+    
 def list_purchases(filename = purchases_data):
 
     with open(filename,'r+') as file:
         file_data = json.load(file)
         for i in file_data['purchases']:
             print(i)
+
 
 
 
