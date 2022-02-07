@@ -5,21 +5,24 @@ import products
 import json
 import pprint
 
-customers_data = "customers.json"
-products_data = "products.json"
-purchases_data = "purchases.json"
+customers_data = "customers.txt"
+products_data = "products.txt"
+purchases_data = "purchases.txt"
 
 def purchases_menu():
     while True:
         user_input = input(
                            "Enter 1 for purchase\n"
-                           "Enter 2 to see past transactions\n"
+                           "Enter 2 to see past purchases\n"
+                           "Enter 3 to search for a purchases\n"
                            "Enter 0 to quit\n")
 
         if int(user_input) == 1:
             check_out()
         elif int(user_input) == 2:
             list_purchases()
+        elif int(user_input) == 3:
+            search_menu()
         elif int(user_input) == 0:
             break        
 
@@ -174,6 +177,39 @@ def list_purchases(filename = purchases_data):
         file_data = json.load(file)
         for i in file_data['purchases']:
             print(i)
+
+def search_menu():
+
+    while True:
+        user_input = input(
+                           "Enter 1 to search by user name\n"
+                           "Enter 2 to search by product name \n"
+                           "Enter 0 to quit\n")
+
+        if int(user_input) == 1:
+            search_by_user()
+        elif int(user_input) == 2:
+            search_by_product()
+        elif int(user_input) == 0:
+            break       
+
+def search_by_user(filename = purchases_data):
+    with open(filename,'r+') as file:
+        file_data = json.load(file)
+        search = input("Enter search item \n")
+        for i in range(len(file_data["purchases"])):
+            if file_data["purchases"][i]["customer_name"][:len(search)].lower() == search.lower():
+                print(file_data["purchases"][i])
+
+def search_by_product(filename=purchases_data):
+    with open(filename,'r+') as file:
+        file_data = json.load(file)
+        search = input("Enter search item \n")
+        for i in range(len(file_data["purchases"])):
+            if file_data["purchases"][i]["product_name"][:len(search)].lower() == search.lower():
+                print(file_data["purchases"][i])
+
+
 
 
 

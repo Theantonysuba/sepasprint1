@@ -1,6 +1,6 @@
 import json
 
-products_data = "products.json"
+products_data = "products.txt"
 
 class Product:
     def __init__(self,id,name,price,quantity):
@@ -47,7 +47,8 @@ def create_product(filename = products_data):
 
         for i in range(len(file_data["products"])):
             if file_data["products"][i]["id"] == id:
-                print("Product Id already exists")
+                print("Product Id already exists, please enter another ID")
+                create_product(filename = products_data)
                 break
         else:
             name = input('Enter product name \n')
@@ -74,16 +75,19 @@ def delete_product(filename = products_data):
         for i in range(len(file_data["products"])):
             if file_data["products"][i]["id"] == id:
                 del file_data["products"][i]
-                break
+                # # Sets file's current position at offset.
+                file.seek(0)
+                # # convert back to json.
+                with open(filename,'w') as file:
+                    json.dump(file_data, file, indent = 4)
+                    print("Product successfully deleted")
+                    break
+        else:
+            print("Product Id does not exist, enter a valid ID")
+            delete_product(filename = products_data)
         
         
-        # # Sets file's current position at offset.
-        file.seek(0)
-        # # convert back to json.
-        with open(filename,'w') as file:
-            json.dump(file_data, file, indent = 4)
-
-        print("Product successfully deleted")
+        
 
 def update_product(filename = products_data):
     
@@ -98,24 +102,23 @@ def update_product(filename = products_data):
                 quantity = int(input('Enter new quantity \n'))
                 price = float(input('Enter new price \n'))
 
-                file_data["products"][i]["name"] = name
-                file_data["products"][i]["quantity"] = quantity
-                file_data["products"][i]["price"] = price
+                product = Product(id,name,price,quantity)
 
-                print("Product successfully updated")
-                break
+                file_data["products"].append(product.__dict__) 
+
+                    # # Sets file's current position at offset.
+                file.seek(0)
+                 # # convert back to json.
+                with open(filename,'w') as file:
+                    json.dump(file_data, file, indent = 4)
+                    print("Product successfully updated")
+                    break
                 
         else:
-            print("Product Id does not exist")
+            print("Product Id does not exist, please enter a valid ID")
+            update_product(filename=products_data)
             
                 
-        
-        # # Sets file's current position at offset.
-        file.seek(0)
-        # # convert back to json.
-        with open(filename,'w') as file:
-            json.dump(file_data, file, indent = 4)
-
         
 
 def list_products(filename = products_data):

@@ -1,0 +1,235 @@
+{
+    "purchases": [
+        {
+            "customer_id": "1",
+            "customer_name": "antony",
+            "product_name": "watermelons",
+            "product_price": 6.0,
+            "product_quantity": 87,
+            "total_price": 120.0
+        },
+        {
+            "customer_id": "1",
+            "customer_name": "antony",
+            "product_name": "mangoes",
+            "product_price": 10.0,
+            "product_quantity": 50,
+            "total_price": 100.0
+        },
+        {
+            "customer_id": "1",
+            "customer_name": "antony",
+            "product_name": "apples",
+            "product_price": 15.0,
+            "product_quantity": 45,
+            "total_price": 150.0
+        },
+        {
+            "customer_id": "2",
+            "customer_name": "susie",
+            "product_name": "bread",
+            "product_price": 10.0,
+            "product_quantity": 10,
+            "total_price": 100.0
+        },
+        {
+            "customer_id": "1",
+            "customer_name": "antony",
+            "product_name": "mangoes",
+            "product_price": 10.0,
+            "product_quantity": 10,
+            "total_price": 100.0
+        },
+        {
+            "customer_id": "1",
+            "customer_name": "antony",
+            "product_name": "apples",
+            "product_price": 15.0,
+            "product_quantity": 10,
+            "total_price": 150.0
+        },
+        {
+            "customer_id": "3",
+            "customer_name": "tari",
+            "product_name": "apples",
+            "product_price": 15.0,
+            "product_quantity": 10,
+            "total_price": 150.0
+        },
+        {
+            "customer_id": "1",
+            "customer_name": "antony",
+            "product_name": "mangoes",
+            "product_price": 10.0,
+            "product_quantity": 10,
+            "total_price": 100.0
+        },
+        {
+            "customer_id": "1",
+            "customer_name": "antony",
+            "product_name": "apples",
+            "product_price": 15.0,
+            "product_quantity": 3,
+            "total_price": 45.0
+        },
+        {
+            "customer_id": "3",
+            "customer_name": "tari",
+            "product_name": "bread",
+            "product_price": 10.0,
+            "product_quantity": 34,
+            "total_price": 340.0
+        },
+        {
+            "customer_id": "6",
+            "customer_name": "mwangi",
+            "product_name": "bread",
+            "product_price": 10.0,
+            "product_quantity": 33,
+            "total_price": 330.0
+        },
+        {
+            "customer_id": "45666",
+            "customer_name": "belinda",
+            "product_name": "mangoes",
+            "product_price": 10.0,
+            "product_quantity": 10,
+            "total_price": 100.0
+        },
+        {
+            "customer_id": "1",
+            "customer_name": "antony",
+            "product_name": "watermelons",
+            "product_price": 6.0,
+            "product_quantity": 55,
+            "total_price": 330.0
+        },
+        {
+            "customer_id": "1",
+            "customer_name": "antony",
+            "product_name": "bread",
+            "product_price": 10.0,
+            "product_quantity": 3,
+            "total_price": 30.0
+        },
+        {
+            "customer_id": "1",
+            "customer_name": "antony",
+            "product_name": "mangoes",
+            "product_price": 10.0,
+            "product_quantity": 1,
+            "total_price": [
+                10.0
+            ]
+        },
+        {
+            "customer_id": "1",
+            "customer_name": "antony",
+            "product_name": "watermelons",
+            "product_price": 6.0,
+            "product_quantity": 2,
+            "total_price": [
+                12.0
+            ]
+        },
+        {
+            "customer_id": "1",
+            "customer_name": "antony",
+            "product_name": "bread",
+            "product_price": 10.0,
+            "product_quantity": 3,
+            "total_price": [
+                12.0,
+                30.0
+            ]
+        },
+        {
+            "customer_id": "2",
+            "customer_name": "susie",
+            "product_name": "oranges",
+            "product_price": 8.0,
+            "product_quantity": 3,
+            "total_price": 24.0
+        },
+        {
+            "customer_id": "3",
+            "customer_name": "tari",
+            "product_name": "apples",
+            "product_price": 15.0,
+            "product_quantity": 12,
+            "total_price": 180.0
+        },
+        {
+            "customer_id": "3",
+            "customer_name": "tari",
+            "product_name": "oranges",
+            "product_price": 8.0,
+            "product_quantity": 23,
+            "total_price": 184.0
+        },
+        {
+            "customer_id": "2",
+            "customer_name": "susie",
+            "product_name": "mangoes",
+            "product_price": 10.0,
+            "product_quantity": 10,
+            "total_price": 100.0
+        },
+        {
+            "customer_id": "2",
+            "customer_name": "susie",
+            "product_name": "watermelons",
+            "product_price": 6.0,
+            "product_quantity": 7,
+            "total_price": 42.0
+        },
+        {
+            "customer_id": "3",
+            "customer_name": "tari",
+            "product_name": "oranges",
+            "product_price": 8.0,
+            "product_quantity": 2,
+            "total_price": 16.0
+        },
+        {
+            "customer_id": "3",
+            "customer_name": "tari",
+            "product_name": "oranges",
+            "product_price": 8.0,
+            "product_quantity": 5,
+            "total_price": 40.0
+        },
+        {
+            "customer_id": "6",
+            "customer_name": "mwangi",
+            "product_name": "pawpaw",
+            "product_price": 6.0,
+            "product_quantity": 2,
+            "total_price": 12.0
+        },
+        {
+            "customer_id": "6",
+            "customer_name": "mwangi",
+            "product_name": "watermelons",
+            "product_price": 6.0,
+            "product_quantity": 2,
+            "total_price": 12.0
+        },
+        {
+            "customer_id": "3",
+            "customer_name": "tari",
+            "product_name": "mangoes",
+            "product_price": 10.0,
+            "product_quantity": 10,
+            "total_price": 100.0
+        },
+        {
+            "customer_id": "3",
+            "customer_name": "tari",
+            "product_name": "apples",
+            "product_price": 15.0,
+            "product_quantity": 10,
+            "total_price": 150.0
+        }
+    ]
+}

@@ -1,0 +1,49 @@
+{
+    "customers": [
+        {
+            "id": "1",
+            "name": "antony",
+            "address": "ksm"
+        },
+        {
+            "id": "2",
+            "name": "susie",
+            "address": "hmb"
+        },
+        {
+            "id": "3",
+            "name": "tari",
+            "address": "mbs"
+        },
+        {
+            "id": "4",
+            "name": "nicky",
+            "address": "ruaka"
+        },
+        {
+            "id": "15",
+            "name": "amy",
+            "address": "ruiru"
+        },
+        {
+            "id": "6",
+            "name": "daisy",
+            "address": "roysambu"
+        },
+        {
+            "id": "47",
+            "name": "sharon",
+            "address": "nakuru"
+        },
+        {
+            "id": "14",
+            "name": "jofa",
+            "address": "kisumu"
+        },
+        {
+            "id": "3333",
+            "name": "wambois",
+            "address": "mombasa"
+        }
+    ]
+}
