@@ -12,10 +12,10 @@ For a purchase, customer_id, product_id and amount of product will be needed. If
 * Python
 
 ## Clone Project
-git clone https://github.com/Theantonysuba/sepasprint1.git
+(git clone https://github.com/Theantonysuba/sepasprint1.git)
 
 ## Run
-python3 __main__.py
+(python3 __main__.py)
 
 ## Concepts
 + Python Programming Fundamentals
