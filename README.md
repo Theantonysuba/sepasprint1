@@ -11,20 +11,20 @@ For a purchase, customer_id, product_id and amount of product will be needed. If
 * Editor
 * Python
 
-##Clone Project
-[git clone https://github.com/Theantonysuba/sepasprint1.git]
+## Clone Project
+git clone https://github.com/Theantonysuba/sepasprint1.git
 
-##Run
-[python3 __main__.py]
+## Run
+python3 __main__.py
 
-##Concepts
+## Concepts
 + Python Programming Fundamentals
 + Object Oriented Programming
 + Core python data structures
 + Algorithms
 + Git Fundamentals
 
-##Project Functionalities
+## Project Functionalities
 The __main__.py file consists of the main menu where the user chooses the operations they want to perform. These are:
 - Customer Operations
 - Product Operations
